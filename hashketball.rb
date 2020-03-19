@@ -197,7 +197,7 @@ def big_shoe_rebounds
     memo = player if memo[:shoe] < player[:shoe]
     memo
   end 
-  puts player_with_biggest_shoe
+  player_with_biggest_shoe[:rebounds]
 end
 
 big_shoe_rebounds
