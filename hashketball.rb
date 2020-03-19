@@ -204,7 +204,7 @@ def most_points_scored
   players = get_all_players
   player_with_highest_score = players.reduce(nil) do |memo, player|
     memo = player unless memo
-    memo = player if memo[:score] < player[:score]
+    memo = player if memo[:points] < player[:points]
     memo
   end 
   player_with_highest_score[:player_name]
