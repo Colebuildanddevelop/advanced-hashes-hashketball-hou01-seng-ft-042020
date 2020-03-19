@@ -192,8 +192,7 @@ end
 def big_shoe_rebounds
   players = get_all_players
   players.reduce(nil) do |memo, player|
-    memo = player if player[:player_name] == "Jeff Adrien"
-    p memo
+    puts memo
   end 
 end
 
