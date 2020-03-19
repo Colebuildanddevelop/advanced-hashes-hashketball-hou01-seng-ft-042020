@@ -231,8 +231,19 @@ def player_with_longest_name
     memo
   end 
   player_with_longest_name[:player_name]
-  
 end 
+
+def long_name_steals_a_ton
+  players = get_all_players
+  player_with_most_steals = players.reduce(nil) do |memo, player|
+    memo = player unless memo
+    memo = player if memo[:steals] < player[:steals]
+    memo
+  end 
+  longest_name = player_with_longest_name
+  return true if player_with_most_steals[:player_name] == longest_name
+  false
+end
 
 
 
