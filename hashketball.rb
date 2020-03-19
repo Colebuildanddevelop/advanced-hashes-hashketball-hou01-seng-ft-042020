@@ -214,9 +214,13 @@ def winning_team
   # get each teams total points 
   home_points = game_hash[:home][:players].reduce(0) do |memo, player|
     memo += player[:points]
+  end
+  away_points = game_hash[:away][:players].reduce(0) do |memo, player|
+    memo += player[:points]
   end 
-  home_points
-  # return the highest 
+  return game_hash[:home][:team_name] unless away_points > home_points
+  game_hash[:away][:team_name]
+  
 end 
 
 puts winning_team
