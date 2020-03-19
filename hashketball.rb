@@ -181,10 +181,32 @@ end
 
 def player_stats(player_name)
   players = get_all_players
-  players.find do |player|
+  player = players.find do |player|
     player[:player_name] == player_name
   end
+  player.delete(:player_name)
+  player
+  
 end
+
+def big_shoe_rebounds
+  players = get_all_players
+  players.reduce(nil) do |memo, player|
+    memo = player if player[:player_name] == "Jeff Adrien"
+    p memo
+  end 
+end
+
+big_shoe_rebounds
+
+
+
+
+
+
+
+
+
 
 
 
