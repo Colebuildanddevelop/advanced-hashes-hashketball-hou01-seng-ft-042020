@@ -210,8 +210,16 @@ def most_points_scored
   player_with_highest_score[:player_name]
 end 
 
-puts most_points_scored
+def winning_team
+  # get each teams total points 
+  home_points = game_hash[:home][:players].reduce(0) do |memo, player|
+    memo += player[:points]
+  end 
+  home_points
+  # return the highest 
+end 
 
+puts winning_team
 
 
 
