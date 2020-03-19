@@ -193,7 +193,7 @@ def big_shoe_rebounds
   players = get_all_players
   players.reduce(nil) do |memo, player|
     memo = player unless memo
-    p memo
+    puts player
   end 
 end
 
