@@ -207,7 +207,7 @@ def most_points_scored
     memo = player if memo[:score] < player[:score]
     memo
   end 
-  player_with_highest_score
+  player_with_highest_score[:player_name]
 end 
 
 
