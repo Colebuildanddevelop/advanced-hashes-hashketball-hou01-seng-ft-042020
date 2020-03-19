@@ -201,7 +201,13 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
-  
+  players = get_all_players
+  player_with_highest_score = players.reduce(nil) do |memo, player|
+    memo = player unless memo
+    memo = player if memo[:score] < player[:score]
+    memo
+  end 
+  player_with_highest_score
 end 
 
 
