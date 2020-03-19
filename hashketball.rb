@@ -223,7 +223,16 @@ def winning_team
   
 end 
 
-puts winning_team
+def player_with_longest_name 
+  players = get_all_players
+  player_with_longest_name = players.reduce(nil) do |memo, player|
+    memo = player unless memo
+    memo = player if memo[:player_name].length < player[:player_name].length
+    memo
+  end 
+  player_with_longest_name[:player_name]
+  
+end 
 
 
 
