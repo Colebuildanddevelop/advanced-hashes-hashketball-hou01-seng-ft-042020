@@ -191,10 +191,13 @@ end
 
 def big_shoe_rebounds
   players = get_all_players
-  players.reduce(nil) do |memo, player|
+  player_with_biggest_shoe = players.reduce(nil) do |memo, player|
     memo = player unless memo
-    puts player
+    # compare shoe size, store biggest size player
+    memo = player if memo[:shoe] < player[:shoe]
+    memo
   end 
+  puts player_with_biggest_shoe
 end
 
 big_shoe_rebounds
